@@ -114,7 +114,6 @@ def order(part):
 sum = 0
 for part in second_part:
     if not is_valid(part):
-        print("PART IS NOT VALID: ", part)
         new_order = order(part)
         print(new_order)
         sum += int(get_middle(new_order))
