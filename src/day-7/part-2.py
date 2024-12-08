@@ -22,20 +22,20 @@ text_file = open("src/day-7/input.txt", "r")
 problem_input = text_file.read()
 
 
-def test_equation(equation, current_sum, target, path):
+def test_equation(equation, current_sum, target):
     if current_sum == target and not equation:
         return True
     if not equation or current_sum > target:
         return False
 
     mul_result = equation[0] * current_sum
-    mul_valid = test_equation(equation[1:], mul_result, target, path + ["*"])
+    mul_valid = test_equation(equation[1:], mul_result, target)
 
     add_result = equation[0] + current_sum
-    add_valid = test_equation(equation[1:], add_result, target, path + ["+"])
+    add_valid = test_equation(equation[1:], add_result, target)
 
     or_result = int(str(current_sum) + str(equation[0]))
-    or_valid = test_equation(equation[1:], or_result, target, path + ["|"])
+    or_valid = test_equation(equation[1:], or_result, target)
 
     return add_valid or mul_valid or or_valid
 
@@ -45,7 +45,7 @@ sum = 0
 
 for parsed_equation in parsed_input:
     target_value, equation = parsed_equation
-    if test_equation(equation[1:], equation[0], target_value, []):
+    if test_equation(equation[1:], equation[0], target_value):
         sum += target_value
 
 print(sum)
