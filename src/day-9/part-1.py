@@ -28,13 +28,12 @@ def sort_blocks(blocks):
     left, right = 0, len(blocks) - 1
 
     while left < right:
-        while blocks[left] != ".":
+        if blocks[left] != ".":
             left += 1
-        while blocks[right] == ".":
+            continue
+        if blocks[right] == ".":
             right -= 1
-
-        if left > right:
-            break
+            continue
 
         current_left = left
 

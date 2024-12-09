@@ -44,11 +44,13 @@ def sort_blocks(blocks):
     left, right = 0, len(blocks) - 1
 
     while right > 0:
-        while blocks[left] != ".":
+        if blocks[left] != ".":
             left += 1
+            continue
 
-        while blocks[right] == ".":
+        if blocks[right] == ".":
             right -= 1
+            continue
 
         left_space = get_space(blocks, left, True)
         right_space = get_space(blocks, right, False)
