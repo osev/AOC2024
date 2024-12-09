@@ -44,8 +44,8 @@ sum = 0
 freq_mappings = get_freq_mappings(matrix)
 
 
-def is_valid(current_antennae):
-    return 0 <= current_antennae[0] < height and 0 <= current_antennae[1] < width
+def is_valid(current):
+    return 0 <= current[0] < height and 0 <= current[1] < width
 
 
 def get_antinodes(antennae_a, antennae_b):
