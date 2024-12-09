@@ -58,7 +58,10 @@ def sort_blocks(blocks):
             while right > 0 and blocks[right] == current_right_val:
                 right -= 1
             left = 0
-        elif left_space >= right_space:
+
+            continue
+
+        if left_space >= right_space:
             current_left, current_right = left, right
             left_end, right_end = left + left_space, right - right_space
 
@@ -73,8 +76,10 @@ def sort_blocks(blocks):
 
             left = 0
             right -= right_space
-        else:
-            left += left_space
+
+            continue
+
+        left += left_space
 
     return blocks
 
