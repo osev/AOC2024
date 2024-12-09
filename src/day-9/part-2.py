@@ -52,9 +52,6 @@ def sort_blocks(blocks):
             right -= 1
             continue
 
-        left_space = get_space(blocks, left, True)
-        right_space = get_space(blocks, right, False)
-
         if left > right:
             current_right_val = blocks[right]
             while right > 0 and blocks[right] == current_right_val:
@@ -62,6 +59,9 @@ def sort_blocks(blocks):
             left = 0
 
             continue
+
+        left_space = get_space(blocks, left, True)
+        right_space = get_space(blocks, right, False)
 
         if left_space >= right_space:
             current_left, current_right = left, right

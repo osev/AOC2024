@@ -1014,7 +1014,6 @@ for line in lines:
 
 
 counts = Counter(b)
-# Online Python - IDE, Editor, Compiler, Interpreter
 
 a_sorted = sorted(a)
 
